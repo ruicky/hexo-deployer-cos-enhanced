@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/75k/hexo-deployer-cos-enhanced.git"
+    "url": "git+https://github.com/ruicky/hexo-deployer-cos-enhanced.git"
   },
   "keywords": [
     "hexo",
@@ -20,9 +20,9 @@
   "author": "LaoGuo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/75k/hexo-deployer-cos-enhanced/issues"
+    "url": "https://github.com/ruicky/hexo-deployer-cos-enhanced/issues"
   },
-  "homepage": "https://github.com/75k/hexo-deployer-cos-enhanced#readme",
+  "homepage": "https://github.com/ruicky/hexo-deployer-cos-enhanced#readme",
   "dependencies": {
     "chalk": "^2.3.0",
     "lodash": "^4.17.2",

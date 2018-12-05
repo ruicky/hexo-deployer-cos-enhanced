@@ -1,4 +1,6 @@
 # hexo-deployer-cos-enhanced
+本文是从 ·· forck 过来的，修改几处，用于自用。
+
 
 Hexo静态博客部署到腾讯云对象存储服务的插件，部署完成后会自动刷新被更新文件的CDN缓存。同时支持图片文件上传到单独对象存储中。
 
@@ -32,7 +34,7 @@ npm install hexo-deployer-cos-enhanced --save
 
 ``` bash
 #开发版
-npm install https://github.com/75k/hexo-deployer-cos-enhanced.git --save
+npm install https://github.com/ruicky/hexo-deployer-cos-enhanced.git --save
 ```
 
 ## 配置
@@ -45,14 +47,36 @@ deploy:
   region: ap-shanghai
   secretId: AKIDIgxxxxxxxxxxxxxxxxxxxx0SepjX
   secretKey: qXPCbxxxxxxxxxxxxxxxxxxxxsJZfdR
-    cdnConfig:
-      enable: true
-      cdnUrl: http://yourCdnSite.com
-      bucket: static-1251123456
-      region: ap-shanghai
-      folder: static-1251123456
-      secretId: AKIDIgxxxxxxxxxxxxxxxxxxxx0SepjX
-      secretKey: qXPCbxxxxxxxxxxxxxxxxxxxxsJZfdR
+  cdnConfig:
+    enable: true
+    cdnUrl: http://yourCdnSite.com
+    bucket: static-1251123456
+    region: ap-shanghai
+    folder: static-1251123456
+    secretId: AKIDIgxxxxxxxxxxxxxxxxxxxx0SepjX
+    secretKey: qXPCbxxxxxxxxxxxxxxxxxxxxsJZfdR
+```
+
+**如果是deplou多个type参考如下**
+``` yml
+url: http://yourSite.com
+deploy: 
+- type: cos
+  bucket: blog-1251123456
+  region: ap-shanghai
+  secretId: AKIDIgxxxxxxxxxxxxxxxxxxxx0SepjX
+  secretKey: qXPCbxxxxxxxxxxxxxxxxxxxxsJZfdR
+  cdnConfig:
+    enable: true
+    cdnUrl: http://yourCdnSite.com
+    bucket: static-1251123456
+    region: ap-shanghai
+    folder: static-1251123456
+    secretId: AKIDIgxxxxxxxxxxxxxxxxxxxx0SepjX
+    secretKey: qXPCbxxxxxxxxxxxxxxxxxxxxsJZfdR
+- type: git
+  repo:
+    github: git@github.com:xxx.git    
 ```
 
 `type`： 是固定死的，只能是 cos。
